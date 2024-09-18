@@ -15,7 +15,7 @@
  * conoce como número menor y se cambia cuando se realizan
  * modificaciones menores.
  */
-const VERSION = "1.00"
+const VERSION = "3.00"
 
 /** Nombre del archivo de cache. */
 const CACHE = "ejemploPWA"
@@ -43,8 +43,7 @@ const ARCHIVOS = [
  "js/configura.js",
  "lib/js/muestraError.js",
  "lib/js/ProblemDetails.js",
- "lib/js/registraServiceWorkerSiEsSoportado.js",
- "/"
+ "lib/js/registraServiceWorkerSiEsSoportado.js"
 ]
 
 // Verifica si el código corre dentro de un service worker.
