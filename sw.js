@@ -15,7 +15,7 @@
  * conoce como número menor y se cambia cuando se realizan
  * modificaciones menores.
  */
-const VERSION = "2.10"
+const VERSION = "2.20"
 
 /** Nombre del archivo de cache. */
 const CACHE = "ejemploPWA"
@@ -25,26 +25,26 @@ const CACHE = "ejemploPWA"
  * línea.
  */
 const ARCHIVOS = [
- "favicon.ico",
- "index.html",
- "site.webmanifest",
- "css/estilos.css",
- "img/icono2048.png",
- "img/maskable_icon.png",
- "img/maskable_icon_x128.png",
- "img/maskable_icon_x192.png",
- "img/maskable_icon_x384.png",
- "img/maskable_icon_x48.png",
- "img/maskable_icon_x512.png",
- "img/maskable_icon_x72.png",
- "img/maskable_icon_x96.png",
- "img/screenshot_horizontal.png",
- "img/screenshot_vertical.png",
- "js/configura.js",
- "lib/js/muestraError.js",
- "lib/js/ProblemDetails.js",
- "lib/js/registraServiceWorkerSiEsSoportado.js",
- "/"
+ "PWA-sencilla/favicon.ico",
+ "PWA-sencilla/index.html",
+ "PWA-sencilla/site.webmanifest",
+ "PWA-sencilla/css/estilos.css",
+ "PWA-sencilla/img/icono2048.png",
+ "PWA-sencilla/img/maskable_icon.png",
+ "PWA-sencilla/img/maskable_icon_x128.png",
+ "PWA-sencilla/img/maskable_icon_x192.png",
+ "PWA-sencilla/img/maskable_icon_x384.png",
+ "PWA-sencilla/img/maskable_icon_x48.png",
+ "PWA-sencilla/img/maskable_icon_x512.png",
+ "PWA-sencilla/img/maskable_icon_x72.png",
+ "PWA-sencilla/img/maskable_icon_x96.png",
+ "PWA-sencilla/img/screenshot_horizontal.png",
+ "PWA-sencilla/img/screenshot_vertical.png",
+ "PWA-sencilla/js/configura.js",
+ "PWA-sencilla/lib/js/muestraError.js",
+ "PWA-sencilla/lib/js/ProblemDetails.js",
+ "PWA-sencilla/lib/js/registraServiceWorkerSiEsSoportado.js",
+ "PWA-sencilla/"
 ]
 
 // Verifica si el código corre dentro de un service worker.
