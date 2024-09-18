@@ -25,9 +25,9 @@ const CACHE = "ejemploPWA"
  * línea.
  */
 const ARCHIVOS = [
- "favicon.ico",
- "index.html",
- "site.webmanifest",
+ "PWA-sencilla/favicon.ico",
+ "PWA-sencilla/index.html",
+ "PWA-sencilla/site.webmanifest",
  "PWA-sencilla/css/estilos.css",
  "PWA-sencilla/img/icono2048.png",
  "PWA-sencilla/img/maskable_icon.png",
