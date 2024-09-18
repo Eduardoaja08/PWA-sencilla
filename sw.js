@@ -15,7 +15,7 @@
  * conoce como número menor y se cambia cuando se realizan
  * modificaciones menores.
  */
-const VERSION = "2.20"
+const VERSION = "1.00"
 
 /** Nombre del archivo de cache. */
 const CACHE = "ejemploPWA"
@@ -25,26 +25,26 @@ const CACHE = "ejemploPWA"
  * línea.
  */
 const ARCHIVOS = [
- "PWA-sencilla/favicon.ico",
- "PWA-sencilla/index.html",
- "PWA-sencilla/site.webmanifest",
- "PWA-sencilla/css/estilos.css",
- "PWA-sencilla/img/icono2048.png",
- "PWA-sencilla/img/maskable_icon.png",
- "PWA-sencilla/img/maskable_icon_x128.png",
- "PWA-sencilla/img/maskable_icon_x192.png",
- "PWA-sencilla/img/maskable_icon_x384.png",
- "PWA-sencilla/img/maskable_icon_x48.png",
- "PWA-sencilla/img/maskable_icon_x512.png",
- "PWA-sencilla/img/maskable_icon_x72.png",
- "PWA-sencilla/img/maskable_icon_x96.png",
- "PWA-sencilla/img/screenshot_horizontal.png",
- "PWA-sencilla/img/screenshot_vertical.png",
- "PWA-sencilla/js/configura.js",
- "PWA-sencilla/lib/js/muestraError.js",
- "PWA-sencilla/lib/js/ProblemDetails.js",
- "PWA-sencilla/lib/js/registraServiceWorkerSiEsSoportado.js",
- "PWA-sencilla/"
+ "favicon.ico",
+ "index.html",
+ "site.webmanifest",
+ "css/estilos.css",
+ "img/icono2048.png",
+ "img/maskable_icon.png",
+ "img/maskable_icon_x128.png",
+ "img/maskable_icon_x192.png",
+ "img/maskable_icon_x384.png",
+ "img/maskable_icon_x48.png",
+ "img/maskable_icon_x512.png",
+ "img/maskable_icon_x72.png",
+ "img/maskable_icon_x96.png",
+ "img/screenshot_horizontal.png",
+ "img/screenshot_vertical.png",
+ "js/configura.js",
+ "lib/js/muestraError.js",
+ "lib/js/ProblemDetails.js",
+ "lib/js/registraServiceWorkerSiEsSoportado.js",
+ "/"
 ]
 
 // Verifica si el código corre dentro de un service worker.
@@ -69,19 +69,21 @@ if (self instanceof ServiceWorkerGlobalScope) {
 }
 
 async function llenaElCache() {
- console.log("Intentando cargar caché:", CACHE)
- // Borra todos los cachés.
- const keys = await caches.keys()
- for (const key of keys) {
-  await caches.delete(key)
- }
- // Abre el caché de este service worker.
- const cache = await caches.open(CACHE)
- // Carga el listado de ARCHIVOS.
- await cache.addAll(ARCHIVOS)
- console.log("Cache cargado:", CACHE)
- console.log("Versión:", VERSION)
+  console.log("Intentando cargar caché:", CACHE);
+  const keys = await caches.keys();
+  for (const key of keys) {
+    await caches.delete(key);
+  }
+  const cache = await caches.open(CACHE);
+  try {
+    await cache.addAll(ARCHIVOS);
+    console.log("Cache cargado:", CACHE);
+  } catch (error) {
+    console.error("Error al cargar el caché:", error);
+  }
+  console.log("Versión:", VERSION);
 }
+
 
 /** @param {FetchEvent} evt */
 async function buscaLaRespuestaEnElCache(evt) {
